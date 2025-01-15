@@ -64,8 +64,6 @@ public class AddFirst {
             }
             return;
         }
-
-        // Traverse to the node just before the target index
         Node temp = head;
         int i = 0;
         while (temp != null && i < idx - 1) {
@@ -123,9 +121,22 @@ public class AddFirst {
         size --;
         return val;
     }
-    public static void main(String[] args) { // Corrected main method
-        AddFirst ll = new AddFirst();       // Instantiating AddFirst
-        ll.print();                         // Printing empty list
+    public int itrSearch(int key){
+        Node temp = head;
+        int i = 0;
+
+        while(temp != null){
+            if(temp.data == key){
+                return i;
+            }
+            temp = temp.next;
+            i++;
+        }
+        return -1;
+    }
+    public static void main(String[] args) { 
+        AddFirst ll = new AddFirst();       
+        ll.print();                    
         ll.connectFirst(2);
         ll.print();
         ll.connectFirst(1);
@@ -136,10 +147,12 @@ public class AddFirst {
         ll.print();
         ll.add(2,9);
         ll.print();
-        System.out.println(ll.size);
+        System.out.println("Size of Linked List: " + ll.size);
         ll.removeFirst();
         ll.print();
         ll.removeLast();
         ll.print();
+        System.out.println("Index of 9: " + ll.itrSearch(9));
+        System.out.println("Index of 10: " + ll.itrSearch(10));
     }
 }
