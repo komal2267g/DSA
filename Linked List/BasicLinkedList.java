@@ -1,4 +1,4 @@
-public class AddFirst {
+public class BasicLinkedList {
     // Node class
     public static class Node {
         int data;
@@ -135,7 +135,7 @@ public class AddFirst {
         return -1;
     }
     public static void main(String[] args) { 
-        AddFirst ll = new AddFirst();       
+        BasicLinkedList ll = new BasicLinkedList ();       
         ll.print();                    
         ll.connectFirst(2);
         ll.print();
